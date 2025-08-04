@@ -24,7 +24,7 @@ const handleUploadAvatarImage = async (e) => {
   try {
     setLoading(true);
 
-    const response = await Axios.put('http://localhost:8080/api/user/upload-avatar', formData, {
+    const response = await Axios.put('https://nepmandi.onrender.com/api/user/upload-avatar', formData, {
       headers: {
         'Content-Type': 'multipart/form-data',
         Authorization: `Bearer ${accessToken}`,

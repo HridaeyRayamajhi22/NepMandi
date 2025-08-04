@@ -13,7 +13,7 @@ const OrderDetails = () => {
   useEffect(() => {
     const fetchOrder = async () => {
       try {
-        const res = await Axios.get(`http://localhost:8080/api/order/${id}`, {
+        const res = await Axios.get(`https://nepmandi.onrender.com/api/order/${id}`, {
           withCredentials: true,
         })
         setOrder(res.data?.order)

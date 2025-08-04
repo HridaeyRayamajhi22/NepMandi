@@ -27,7 +27,7 @@ const PaymentComponent = () => {
 
     try {
       // Send amount (and other data if needed) to backend payment controller
-      const response = await axios.post("http://localhost:8080/api/payment", {
+      const response = await axios.post("https://nepmandi.onrender.com/api/payment", {
         amount, // Send whatever your backend expects
         // productId: someProductId, // add if needed
         // quantity: 1, // optional
