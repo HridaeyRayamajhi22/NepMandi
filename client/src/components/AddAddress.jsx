@@ -1,6 +1,6 @@
 import React from 'react'
 import { useForm } from 'react-hook-form'
-import Axios from '../utils/.js'
+import Axios from '../utils/axios.js'
 import SummaryApi from '../common/SummaryApi'
 import toast from 'react-hot-toast'
 import AxiosToastError from '../utils/axiostoasterror.js'
