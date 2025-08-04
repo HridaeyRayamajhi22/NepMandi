@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import Axios from '../utils/axios';
-import AxiosToastError from '../utils/AxiosToastError';
+import AxiosToastError from '../utils/axiostoasterror';
 import SummaryApi from '../common/SummaryApi';
 import toast from 'react-hot-toast';
 

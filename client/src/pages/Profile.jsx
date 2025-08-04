@@ -9,7 +9,7 @@ import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { FaRegCircleUser } from "react-icons/fa6";
 import UserProfileAvatarEdit from '../components/UserProfileAvatarEdit';
-import Axios from '../utils/Axios';
+import Axios from '../utils/axios';
 import SummaryApi from '../common/SummaryApi';
 import AxiosToastError from '../utils/axiostoasterror';
 import toast from 'react-hot-toast';
