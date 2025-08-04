@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
-import axios from "axios";
+import axios from "axios.js";
 import toast from "react-hot-toast";
 import { useDispatch, useSelector } from "react-redux";   // add useSelector here
 import { handleAddItemCart} from "../store/cartProduct";

@@ -7,9 +7,9 @@ import { MdDelete } from "react-icons/md";
 import { useSelector } from 'react-redux'
 import { IoClose } from "react-icons/io5";
 import AddFieldComponent from '../components/AddFieldComponent';
-import Axios from '../utils/Axios';
+import Axios from '../utils/axios.js';
 import SummaryApi from '../common/SummaryApi';
-import AxiosToastError from '../utils/axiostoasterror';
+import AxiosToastError from '../utils/axiostoasterror.js';
 import successAlert from '../utils/SuccessAlert';
 import { useEffect } from 'react';
 

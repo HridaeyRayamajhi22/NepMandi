@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
-import AxiosToastError from '../utils/axiostoasterror';
-import Axios from '../utils/axios';
+import AxiosToastError from '../utils/axiostoasterror.js';
+import Axios from '../utils/axios.js';
 import SummaryApi from '../common/SummaryApi';
 import CardLoading from './CardLoading';
 import CardProduct from './CardProduct';

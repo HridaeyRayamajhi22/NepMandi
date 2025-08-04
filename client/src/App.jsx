@@ -8,7 +8,7 @@ import fetchUserDetails from './utils/fetchUserDetails';
 import { setUserDetails } from './store/userSlice'
 import { useDispatch } from 'react-redux';
 import { setAllCategory,setAllSubCategory,setLoadingCategory } from './store/productSlice';
-import Axios from './utils/axios';
+import Axios from './utils/axios.js';
 import SummaryApi from './common/SummaryApi';
 import { handleAddItemCart } from './store/cartProduct'
 import GlobalProvider from './provider/GlobalProvider';

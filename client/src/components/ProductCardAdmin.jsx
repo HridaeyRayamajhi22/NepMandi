@@ -1,15 +1,9 @@
-
-
-
-
-
-
 import React, { useState } from 'react';
 import EditProductAdmin from '../components/EditProductAdmin';
 import ConfirmBox from '../components/ConfirmBox';
 import { IoClose } from 'react-icons/io5';
 import SummaryApi from '../common/SummaryApi';
-import Axios from '../utils/Axios';
+import Axios from '../utils/axios';
 import AxiosToastError from '../utils/axiostoasterror';
 import toast from 'react-hot-toast';
 

@@ -1,9 +1,9 @@
 import React from 'react'
 import { useForm } from "react-hook-form"
-import Axios from '../utils/axios'
+import Axios from '../utils/axios.js'
 import SummaryApi from '../common/SummaryApi'
 import toast from 'react-hot-toast'
-import AxiosToastError from '../utils/axiostoasterror'
+import AxiosToastError from '../utils/axiostoasterror.js'
 import { IoClose } from "react-icons/io5";
 import { useGlobalContext } from '../provider/GlobalProvider'
 
