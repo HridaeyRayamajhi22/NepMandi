@@ -1,6 +1,4 @@
 import React, { useState } from 'react';
-import banner from '../assets/banner.jpg';
-import bannerMobile from '../assets/banner-mobile.jpg';
 import Designer1 from '../assets/Designer1.png';
 import { useSelector } from 'react-redux';
 import { valideURLConvert } from '../utils/valideURLConvert';
@@ -41,7 +39,7 @@ const Home = () => {
       {/* Banner */}
       <div className="w-full mx-auto sm:w-[90%] lg:w-[85%] px-4 sm:px-8 md:px-10 pt-4">
         <picture>
-          <source media="(max-width: 600px)" srcSet={bannerMobile} />
+          <source media="(max-width: 600px)" srcSet={Designer1} />
           <img
             src={Designer1}
             alt="Promotional Banner"

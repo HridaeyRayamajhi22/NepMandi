@@ -1,5 +1,4 @@
 import React, { useState } from 'react'
-import Logo from '../assets/Logo.png'
 import Search from './Search'
 import { Link, useLocation, useNavigate } from 'react-router-dom'
 import { FaUserCircle } from "react-icons/fa";
@@ -57,7 +56,7 @@ const Header = () => {
                 />
               </div>
               <img
-                src={Logo}
+                src={download}
                 width={190}
                 height={20}
                 alt="Logo"
