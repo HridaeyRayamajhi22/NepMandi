@@ -34,3 +34,5 @@ Git / GitHub	Version control
 VS Code	Development environment
 
 📖 Inspired by the Dynamic Coding with Amit full‑stack MERN tutorial.
+
+📝Note: DUE TO ITS HEAVY BACKEND THE SITE MAY TAKE TIME TO LOAD THE DEMO PRODUCTS PLEASE BE PATIENT UNTIL THEN...
