@@ -40,12 +40,14 @@ const Header = () => {
   }
 
   return (
-    <header className='h-24 lg:h-20 lg:shadow-md shadow-sm sticky top-0 z-40 flex flex-col justify-center gap-1 bg-white'>
+    <header className='h-20 lg:h-20 lg:shadow-md shadow-sm sticky top-0 z-40 flex flex-col justify-center gap-1 bg-white'>
       {!(isSearchPage && isMobile) && (
-        <div className='container mx-auto flex items-center px-10 justify-between'>
+        <div className='container mx-auto flex items-center justify-between px-4 sm:px-6 lg:px-10'>
+          
           {/* Logo */}
-          <div className='h-full'>
+          <div className='h-full flex-shrink-0'>
             <Link to={"/"} className='h-full flex justify-center items-center'>
+              {/* Desktop Logo */}
               <div className="hidden lg:flex items-center space-x-2">
                 <img
                   src={download}
@@ -55,28 +57,34 @@ const Header = () => {
                   className="rounded-xl shadow-md transition-transform duration-300 hover:scale-105"
                 />
               </div>
-              <img
-                src={download}
-                width={190}
-                height={20}
-                alt="Logo"
-                className='lg:hidden'
-              />
+
+              {/* Mobile Logo */}
+              <div className="lg:hidden flex items-center">
+                <img
+                  src={download}
+                  alt="Logo"
+                  className="max-h-10 w-auto object-contain rounded-lg"
+                />
+              </div>
             </Link>
           </div>
 
-          {/* Search Bar */}
+          {/* Search Bar (Desktop) */}
           <div className='hidden lg:block'>
             <Search />
           </div>
 
-          {/* Mobile: Navigation Links Login and Carts */}
-          <div>
-            <button className='text-neutral-800 lg:hidden' onClick={handleMobileUser}>
-              <FaUserCircle size={28} />
+          {/* Right side icons */}
+          <div className="flex items-center gap-3">
+            {/* Mobile: User */}
+            <button 
+              className='text-neutral-800 lg:hidden' 
+              onClick={handleMobileUser}
+            >
+              <FaUserCircle size={26} />
             </button>
 
-            {/* Desktop: Navigation Links Login and Carts */}
+            {/* Desktop: User + Cart */}
             <div className='hidden lg:flex items-center gap-10'>
               {user?._id ? (
                 <div className='relative'>
@@ -128,6 +136,8 @@ const Header = () => {
                   Login
                 </button>
               )}
+
+              {/* Desktop Cart */}
               <button
                 onClick={() => setOpenCartSection(true)}
                 className='flex items-center gap-4 bg-sky-950 px-4 py-3 rounded-md text-white hover:bg-sky-700 transition duration-300 ease-in-out'>
@@ -135,16 +145,14 @@ const Header = () => {
                   <TiShoppingCart size={37} />
                 </div>
                 <div className='font-semibold'>
-                  {
-                    cartItem[0] ? (
-                      <div>
-                        <p>{totalQty} Items</p>
-                        <p>{DisplayPriceInRupees(totalPrice)}</p>
-                      </div>
-                    ) : (
-                      <p>My Cart</p>
-                    )
-                  }
+                  {cartItem[0] ? (
+                    <>
+                      <p>{totalQty} Items</p>
+                      <p>{DisplayPriceInRupees(totalPrice)}</p>
+                    </>
+                  ) : (
+                    <p>My Cart</p>
+                  )}
                 </div>
               </button>
             </div>
@@ -152,9 +160,11 @@ const Header = () => {
         </div>
       )}
 
-      <div className='container mx-auto px-10 lg:hidden'>
+      {/* Mobile Search */}
+      <div className='container mx-auto px-4 lg:hidden'>
         <Search />
       </div>
+
       {openCartSection && (
         <DisplayCartItem close={() => setOpenCartSection(false)} />
       )}
@@ -162,4 +172,4 @@ const Header = () => {
   )
 }
 
-export default Header;
+export default Header
