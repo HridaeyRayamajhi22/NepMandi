@@ -11,14 +11,14 @@ import { valideURLConvert } from '../utils/valideURLConvert';
 
 const CategoryWiseProductDisplay = ({ id, name }) => {
   const [data, setData] = useState([]);
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(true); // show skeleton immediately
   const containerRef = useRef();
   const subCategoryData = useSelector(state => state.product.allSubCategory);
   const loadingCardNumber = new Array(6).fill(null);
 
   const fetchCategoryWiseProduct = async () => {
     try {
-      setLoading(true);
+      setLoading(true); // start loading
       const response = await Axios({
         ...SummaryApi.getProductByCategory,
         data: { id }
@@ -30,13 +30,13 @@ const CategoryWiseProductDisplay = ({ id, name }) => {
     } catch (error) {
       AxiosToastError(error);
     } finally {
-      setLoading(false);
+      setLoading(false); // stop loading
     }
   };
 
   useEffect(() => {
     fetchCategoryWiseProduct();
-  }, []);
+  }, [id]); // fetch again if category changes
 
   const handleScrollRight = () => {
     containerRef.current.scrollLeft += 300;
@@ -71,15 +71,23 @@ const CategoryWiseProductDisplay = ({ id, name }) => {
           ref={containerRef}
         >
           {loading
-            ? loadingCardNumber.map((_, index) => <CardLoading key={`loading-${index}`} />)
-            : data.map((p, index) => (
-                <CardProduct
-                  data={p}
-                  key={p._id + '-CategorywiseProductDisplay-' + index}
-                />
-              ))}
+            ? loadingCardNumber.map((_, index) => (
+                <CardLoading key={`loading-${index}`} />
+              ))
+            : data.length > 0
+              ? data.map((p, index) => (
+                  <CardProduct
+                    data={p}
+                    key={p._id + '-CategorywiseProductDisplay-' + index}
+                  />
+                ))
+              : (
+                <p className="text-gray-500 text-sm">No products found.</p>
+              )
+          }
         </div>
 
+        {/* Scroll buttons */}
         <div className="hidden lg:flex absolute top-1/2 left-0 right-0 px-4 transform -translate-y-1/2 justify-between pointer-events-none">
           <button
             onClick={handleScrollLeft}
