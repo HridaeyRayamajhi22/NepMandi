@@ -40,10 +40,10 @@ const Header = () => {
   }
 
   return (
-    <header className='h-20 lg:h-20 lg:shadow-md shadow-sm sticky top-0 z-40 flex flex-col justify-center gap-1 bg-white'>
+    <header className='h-auto lg:h-20 lg:shadow-md shadow-sm sticky top-0 z-40 flex flex-col justify-center gap-1 bg-white'>
       {!(isSearchPage && isMobile) && (
         <div className='container mx-auto flex items-center justify-between px-4 sm:px-6 lg:px-10'>
-          
+
           {/* Logo */}
           <div className='h-full flex-shrink-0'>
             <Link to={"/"} className='h-full flex justify-center items-center'>
@@ -59,11 +59,11 @@ const Header = () => {
               </div>
 
               {/* Mobile Logo */}
-              <div className="lg:hidden flex items-center">
+              <div className="lg:hidden flex items-center justify-center py-2">
                 <img
                   src={download}
                   alt="Logo"
-                  className="max-h-10 w-auto object-contain rounded-lg"
+                  className="max-h-12 w-auto object-contain rounded-lg"
                 />
               </div>
             </Link>
@@ -77,8 +77,8 @@ const Header = () => {
           {/* Right side icons */}
           <div className="flex items-center gap-3">
             {/* Mobile: User */}
-            <button 
-              className='text-neutral-800 lg:hidden' 
+            <button
+              className='text-neutral-800 lg:hidden'
               onClick={handleMobileUser}
             >
               <FaUserCircle size={26} />
@@ -88,16 +88,16 @@ const Header = () => {
             <div className='hidden lg:flex items-center gap-10'>
               {user?._id ? (
                 <div className='relative'>
-                  <div 
-                    onClick={() => setOpenUserMenu(prev => !prev)} 
+                  <div
+                    onClick={() => setOpenUserMenu(prev => !prev)}
                     className='flex items-center gap-2 cursor-pointer group'
                   >
                     <div className='flex items-center gap-2'>
                       <div className='w-9 h-9 rounded-full bg-gradient-to-r from-blue-100 to-cyan-100 flex items-center justify-center overflow-hidden border border-blue-200'>
                         {user?.profilePicture ? (
-                          <img 
-                            src={user.profilePicture} 
-                            alt="Profile" 
+                          <img
+                            src={user.profilePicture}
+                            alt="Profile"
                             className='w-full h-full object-cover'
                           />
                         ) : (
@@ -129,8 +129,8 @@ const Header = () => {
                   )}
                 </div>
               ) : (
-                <button 
-                  onClick={redirectToLoginPage} 
+                <button
+                  onClick={redirectToLoginPage}
                   className='text-lg px-2 font-medium hover:font-bold'
                 >
                   Login
