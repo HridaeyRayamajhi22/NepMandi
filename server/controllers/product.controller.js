@@ -359,29 +359,29 @@ export const searchProduct = async (request, response) => {
   }
 };
 
-// Categories connected at one as to fasten the
-export const getProductsByCategories = async (req, res) => {
-  try {
-    const { categories } = req.body; // expecting array
+// // Categories connected at one as to fasten the
+// export const getProductsByCategories = async (req, res) => {
+//   try {
+//     const { categories } = req.body; // expecting array
 
-    if (!categories || !Array.isArray(categories)) {
-      return res.status(400).json({ error: "categories must be an array" });
-    }
+//     if (!categories || !Array.isArray(categories)) {
+//       return res.status(400).json({ error: "categories must be an array" });
+//     }
 
-    // Fetch all products that belong to the given categories
-    const products = await ProductModel.find({ category: { $in: categories } });
+//     // Fetch all products that belong to the given categories
+//     const products = await ProductModel.find({ category: { $in: categories } });
 
-    // Group by category
-    const grouped = {};
-    categories.forEach((cat) => {
-      grouped[cat] = products.filter(
-        (p) => p.category.toString() === cat.toString()
-      );
-    });
+//     // Group by category
+//     const grouped = {};
+//     categories.forEach((cat) => {
+//       grouped[cat] = products.filter(
+//         (p) => p.category.toString() === cat.toString()
+//       );
+//     });
 
-    res.json(grouped);
-  } catch (err) {
-    console.error("Error in getProductsByCategories:", err);
-    res.status(500).json({ error: "Server error" });
-  }
-};
+//     res.json(grouped);
+//   } catch (err) {
+//     console.error("Error in getProductsByCategories:", err);
+//     res.status(500).json({ error: "Server error" });
+//   }
+// };

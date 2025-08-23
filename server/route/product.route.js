@@ -22,8 +22,8 @@ productRouter.delete('/delete-product',deleteProductDetails)
 //search product 
 productRouter.post('/search-product',searchProduct)
 
-// Fetch details for all the categories at once
-productRouter.post("/get-products-by-categories", getProductsByCategories);
+// // Fetch details for all the categories at once
+// productRouter.post("/get-products-by-categories", getProductsByCategories);
 
 
 export default productRouter

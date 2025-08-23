@@ -153,10 +153,10 @@ const SummaryApi = {
     url: "/api/order/order-list",
     method: "get",
   },
-  getProductsByCategories: {
-    url: "/api/product/get-products-by-categories",
-    method: "post",
-  },
+//   getProductsByCategories: {
+//     url: "/api/product/get-products-by-categories",
+//     method: "post",
+//   },
 };
 
 export default SummaryApi;
