@@ -13,7 +13,7 @@ import storage from 'redux-persist/lib/storage' // defaults to localStorage
 const persistConfig = {
   key: 'root',
   storage,
-  whitelist: ['wishlist'] // only wishlist will be persisted
+  whitelist: ['wishlist'], // only wishlist will be persisted
 }
 
 const rootReducer = combineReducers({
@@ -29,6 +29,13 @@ const persistedReducer = persistReducer(persistConfig, rootReducer)
 
 export const store = configureStore({
   reducer: persistedReducer,
+  middleware: (getDefaultMiddleware) =>
+    getDefaultMiddleware({
+      serializableCheck: {
+        // Ignore redux-persist actions
+        ignoredActions: ['persist/PERSIST', 'persist/REHYDRATE'],
+      },
+    }),
 })
 
 export const persistor = persistStore(store)
